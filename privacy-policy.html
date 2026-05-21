@@ -8,168 +8,131 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0C0A28;
-      color: #E2E0F0;
+      background: #0d0b1e;
+      color: #e2e0f0;
       line-height: 1.7;
-      min-height: 100vh;
+      padding: 0 16px 64px;
     }
-    .top-bar {
-      background: rgba(108,99,255,0.08);
-      border-bottom: 1px solid rgba(108,99,255,0.2);
-      padding: 16px 24px;
-      display: flex; align-items: center; gap: 10px;
+    .wrap { max-width: 720px; margin: 0 auto; }
+    header {
+      padding: 48px 0 32px;
+      border-bottom: 1px solid rgba(108,99,255,0.25);
+      margin-bottom: 40px;
     }
-    .logo-mark {
-      width: 32px; height: 32px; border-radius: 9px;
+    .logo { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .logo-icon {
+      width: 48px; height: 48px; border-radius: 14px;
       background: linear-gradient(135deg, #6C63FF, #A855F7);
       display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 16px; color: #fff;
+      font-size: 22px; font-weight: 900; color: #fff;
     }
-    .brand { font-size: 17px; font-weight: 700; color: #fff; }
-    .badge {
-      margin-left: auto; font-size: 11px; color: rgba(255,255,255,0.45);
-      background: rgba(255,255,255,0.07); padding: 4px 10px;
-      border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
-    }
-    .container { max-width: 740px; margin: 0 auto; padding: 56px 24px 80px; }
-    .page-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      color: #6C63FF; text-transform: uppercase; margin-bottom: 12px;
-    }
-    h1 {
-      font-size: 36px; font-weight: 800; color: #fff;
-      letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 10px;
-    }
-    .meta { font-size: 13px; color: rgba(255,255,255,0.38); margin-bottom: 40px; }
-    .intro-card {
-      background: rgba(108,99,255,0.1);
-      border: 1px solid rgba(108,99,255,0.25);
-      border-radius: 16px; padding: 20px 24px; margin-bottom: 48px;
-      font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.65;
-    }
+    .logo-name { font-size: 22px; font-weight: 800; color: #fff; }
+    h1 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .meta { font-size: 13px; color: #9d9ac2; }
     h2 {
-      font-size: 19px; font-weight: 700; color: #fff;
-      margin-top: 44px; margin-bottom: 14px;
-      display: flex; align-items: center; gap: 10px;
+      font-size: 17px; font-weight: 700; color: #fff;
+      margin: 36px 0 12px;
+      padding-left: 12px;
+      border-left: 3px solid #6C63FF;
     }
-    .num {
-      width: 28px; height: 28px; border-radius: 8px;
-      background: rgba(108,99,255,0.2); border: 1px solid rgba(108,99,255,0.35);
-      display: inline-flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 700; color: #6C63FF; flex-shrink: 0;
-    }
-    p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
-    ul { list-style: none; margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px; }
-    ul li {
-      font-size: 15px; color: rgba(255,255,255,0.7);
-      padding-left: 20px; position: relative;
-    }
-    ul li::before {
-      content: ''; position: absolute; left: 0; top: 9px;
-      width: 5px; height: 5px; border-radius: 50%; background: #6C63FF;
-    }
-    ul li strong { color: rgba(255,255,255,0.9); }
-    a { color: #818CF8; text-decoration: none; }
+    p { margin-bottom: 12px; color: #c4c0e0; font-size: 15px; }
+    ul { padding-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; color: #c4c0e0; font-size: 15px; }
+    a { color: #A855F7; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-    .tag {
-      font-size: 12px; font-weight: 600;
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px; padding: 4px 12px; color: rgba(255,255,255,0.65);
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(108,99,255,0.2);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin: 24px 0;
     }
-    .divider { height: 1px; background: rgba(255,255,255,0.07); margin: 48px 0; }
+    .card p { margin: 0; }
     footer {
-      text-align: center; font-size: 13px; color: rgba(255,255,255,0.25);
-      margin-top: 64px; padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.07);
+      margin-top: 56px; padding-top: 24px;
+      border-top: 1px solid rgba(108,99,255,0.2);
+      font-size: 13px; color: #6b6893; text-align: center;
     }
-    footer a { color: rgba(255,255,255,0.35); }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="logo-icon">C</div>
+        <span class="logo-name">Claro</span>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="meta">Effective date: May 17, 2025 &nbsp;·&nbsp; Last updated: May 17, 2025</p>
+    </header>
 
-  <div class="top-bar">
-    <div class="logo-mark">C</div>
-    <span class="brand">Claro</span>
-    <span class="badge">Legal</span>
-  </div>
-
-  <div class="container">
-    <div class="page-label">Legal</div>
-    <h1>Privacy Policy</h1>
-    <p class="meta">Effective date: May 17, 2025 &nbsp;·&nbsp; Last updated: May 21, 2026</p>
-
-    <div class="intro-card">
-      Your privacy matters to us. Claro is designed to keep your personal and financial data under your control — we don't sell it, we don't advertise with it, and we never will.
+    <div class="card">
+      <p>Your privacy matters to us. Claro is designed to keep your personal and financial data under your control. We collect only what is necessary to provide the service and never sell your data to third parties.</p>
     </div>
 
-    <h2><span class="num">1</span> Who We Are</h2>
-    <p>Claro is developed and operated by Mert Türk as an independent application. For any privacy-related inquiries, contact us at <a href="mailto:mertturk0013@gmail.com">mertturk0013@gmail.com</a>.</p>
+    <h2>1. Who We Are</h2>
+    <p>Claro is developed and operated by Mert Türk ("we", "us", or "our"). If you have any questions about this policy, you can reach us at <a href="mailto:mertturk0013@gmail.com">mertturk0013@gmail.com</a>.</p>
 
-    <h2><span class="num">2</span> Information We Collect</h2>
+    <h2>2. Information We Collect</h2>
+    <p>We collect the following categories of information:</p>
     <ul>
-      <li><strong>Account information:</strong> Email address used to create and manage your account.</li>
-      <li><strong>Financial data:</strong> Income and expense transactions, categories, monthly budget limits, savings goals, and net worth entries you manually enter.</li>
-      <li><strong>Habit data:</strong> Habits you create, daily completion records, streaks, streak freezes used, and reminder times you configure.</li>
-      <li><strong>App preferences:</strong> Theme selection, currency setting, and notification preferences.</li>
-      <li><strong>Device &amp; diagnostic data:</strong> Crash reports and anonymous performance diagnostics via Sentry.</li>
-      <li><strong>Subscription status:</strong> Whether your account is Free or Premium. We do not store or access your payment card details.</li>
+      <li><strong>Account information:</strong> Your email address when you register or sign in.</li>
+      <li><strong>Financial data:</strong> Transactions, income, expense categories, savings goals, and net worth entries that you manually input into the app.</li>
+      <li><strong>Habit data:</strong> Habits you create, completion logs, streaks, and reminders you configure.</li>
+      <li><strong>Device &amp; usage data:</strong> Crash reports and anonymous diagnostic information to help us fix bugs and improve stability (via Sentry).</li>
+      <li><strong>Purchase information:</strong> Subscription status and transaction receipts, processed by RevenueCat and Apple. We do not store your payment card details.</li>
     </ul>
 
-    <h2><span class="num">3</span> How We Use Your Information</h2>
+    <h2>3. How We Use Your Information</h2>
     <ul>
-      <li>To provide and sync your data across devices (cloud sync).</li>
-      <li>To send daily habit reminders at the times you explicitly set.</li>
-      <li>To process and manage your subscription status via RevenueCat.</li>
-      <li>To diagnose crashes and improve app stability.</li>
-      <li>To restore your data when you reinstall or switch devices.</li>
+      <li>To create and maintain your account and sync your data across devices.</li>
+      <li>To provide core app features: habit tracking, expense tracking, savings goals, and net worth.</li>
+      <li>To process your subscription and verify premium access.</li>
+      <li>To diagnose crashes and improve app performance.</li>
+      <li>To send you optional habit reminder notifications (only if you enable them).</li>
     </ul>
-    <p>We do not use your financial or habit data for advertising, profiling, or sale to any third party.</p>
 
-    <h2><span class="num">4</span> Push Notifications</h2>
-    <p>If you configure a daily reminder for a habit, Claro will send a push notification at the time you selected. You can disable notifications at any time from your device's system settings, or by turning off reminders inside the app.</p>
-
-    <h2><span class="num">5</span> Third-Party Services</h2>
-    <p>Claro relies on the following third-party providers, each governed by their own privacy policies:</p>
-    <div class="tag-row">
-      <span class="tag">Supabase — authentication &amp; database</span>
-      <span class="tag">RevenueCat — subscription management</span>
-      <span class="tag">Sentry — crash &amp; error reporting</span>
-      <span class="tag">Apple — app distribution &amp; payments</span>
-    </div>
-    <p style="margin-top:14px;">None of these providers receive your raw financial or habit data for their own use.</p>
-
-    <h2><span class="num">6</span> Data Storage &amp; Security</h2>
-    <p>Your data is stored on Supabase infrastructure and protected with industry-standard encryption — TLS in transit and AES-256 at rest. Data persisted locally on your device uses the platform's secure storage mechanisms.</p>
-
-    <h2><span class="num">7</span> Data Retention</h2>
-    <p>Your data is retained for as long as your account is active. If you delete your account (Profile → Delete Account), all associated data is permanently and irreversibly deleted within 30 days.</p>
-
-    <h2><span class="num">8</span> Your Rights</h2>
+    <h2>4. Third-Party Services</h2>
+    <p>We use the following third-party services, each governed by their own privacy policy:</p>
     <ul>
-      <li><strong>Access:</strong> Request a copy of the data we hold about you.</li>
-      <li><strong>Correction:</strong> Ask us to correct inaccurate or incomplete data.</li>
-      <li><strong>Deletion:</strong> Delete your account and all data directly in the app, or by contacting us.</li>
-      <li><strong>Notification opt-out:</strong> Disable push notifications at any time via system or app settings.</li>
+      <li><strong>Supabase</strong> – Authentication and cloud database (data stored in secure EU/US servers). <a href="https://supabase.com/privacy" target="_blank">Privacy Policy</a></li>
+      <li><strong>RevenueCat</strong> – In-app subscription management. <a href="https://www.revenuecat.com/privacy" target="_blank">Privacy Policy</a></li>
+      <li><strong>Sentry</strong> – Crash reporting and error monitoring (no personally identifiable data is sent). <a href="https://sentry.io/privacy/" target="_blank">Privacy Policy</a></li>
+      <li><strong>Apple</strong> – App distribution, payment processing, and push notifications. <a href="https://www.apple.com/legal/privacy/" target="_blank">Privacy Policy</a></li>
     </ul>
-    <p>To exercise any of these rights, email <a href="mailto:mertturk0013@gmail.com">mertturk0013@gmail.com</a>.</p>
 
-    <h2><span class="num">9</span> Children's Privacy</h2>
-    <p>Claro is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us and we will promptly delete it.</p>
+    <h2>5. Data Storage &amp; Security</h2>
+    <p>Your data is stored securely in Supabase's cloud infrastructure using industry-standard encryption (TLS in transit, AES-256 at rest). We implement reasonable technical and organisational measures to protect your information against unauthorized access, alteration, or destruction.</p>
 
-    <h2><span class="num">10</span> Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Material changes will be reflected in the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
+    <h2>6. Data Retention</h2>
+    <p>We retain your data for as long as your account is active. If you delete your account through the app, all your personal data (account, habits, transactions, goals) is permanently deleted within 30 days.</p>
 
-    <div class="divider"></div>
+    <h2>7. Your Rights</h2>
+    <p>Depending on your location, you may have the right to:</p>
+    <ul>
+      <li>Access the personal data we hold about you.</li>
+      <li>Request correction of inaccurate data.</li>
+      <li>Request deletion of your account and all associated data.</li>
+      <li>Withdraw consent for notifications at any time via your device settings.</li>
+    </ul>
+    <p>To exercise any of these rights, email us at <a href="mailto:mertturk0013@gmail.com">mertturk0013@gmail.com</a>.</p>
 
-    <h2><span class="num">11</span> Contact</h2>
-    <p>Questions or concerns about this policy?<br>
-    Email: <a href="mailto:mertturk0013@gmail.com">mertturk0013@gmail.com</a></p>
+    <h2>8. Children's Privacy</h2>
+    <p>Claro is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us immediately.</p>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
+
+    <h2>10. Contact Us</h2>
+    <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
+    <ul>
+      <li>Email: <a href="mailto:mertturk0013@gmail.com">mertturk0013@gmail.com</a></li>
+    </ul>
 
     <footer>
-      <p>© 2026 Claro &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; <a href="terms-of-service.html">Terms of Service</a></p>
+      &copy; 2025 Claro · All rights reserved ·
+      <a href="terms-of-service.html">Terms of Service</a>
     </footer>
   </div>
-
 </body>
 </html>

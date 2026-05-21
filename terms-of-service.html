@@ -8,239 +8,149 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0C0A28;
-      color: #E2E0F0;
+      background: #0d0b1e;
+      color: #e2e0f0;
       line-height: 1.7;
-      min-height: 100vh;
+      padding: 0 16px 64px;
     }
-    .top-bar {
-      background: rgba(108,99,255,0.08);
-      border-bottom: 1px solid rgba(108,99,255,0.2);
-      padding: 16px 24px;
-      display: flex; align-items: center; gap: 10px;
+    .wrap { max-width: 720px; margin: 0 auto; }
+    header {
+      padding: 48px 0 32px;
+      border-bottom: 1px solid rgba(108,99,255,0.25);
+      margin-bottom: 40px;
     }
-    .logo-mark {
-      width: 32px; height: 32px; border-radius: 9px;
+    .logo { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+    .logo-icon {
+      width: 48px; height: 48px; border-radius: 14px;
       background: linear-gradient(135deg, #6C63FF, #A855F7);
       display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: 16px; color: #fff;
+      font-size: 22px; font-weight: 900; color: #fff;
     }
-    .brand { font-size: 17px; font-weight: 700; color: #fff; }
-    .badge {
-      margin-left: auto; font-size: 11px; color: rgba(255,255,255,0.45);
-      background: rgba(255,255,255,0.07); padding: 4px 10px;
-      border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
-    }
-    .container { max-width: 740px; margin: 0 auto; padding: 56px 24px 80px; }
-    .page-label {
-      font-size: 11px; font-weight: 700; letter-spacing: 2px;
-      color: #6C63FF; text-transform: uppercase; margin-bottom: 12px;
-    }
-    h1 {
-      font-size: 36px; font-weight: 800; color: #fff;
-      letter-spacing: -0.5px; line-height: 1.2; margin-bottom: 10px;
-    }
-    .meta { font-size: 13px; color: rgba(255,255,255,0.38); margin-bottom: 16px; }
-    .lead {
-      font-size: 15px; color: rgba(255,255,255,0.55);
-      margin-bottom: 40px; line-height: 1.65;
-    }
+    .logo-name { font-size: 22px; font-weight: 800; color: #fff; }
+    h1 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .meta { font-size: 13px; color: #9d9ac2; }
     h2 {
-      font-size: 19px; font-weight: 700; color: #fff;
-      margin-top: 44px; margin-bottom: 14px;
-      display: flex; align-items: center; gap: 10px;
+      font-size: 17px; font-weight: 700; color: #fff;
+      margin: 36px 0 12px;
+      padding-left: 12px;
+      border-left: 3px solid #6C63FF;
     }
-    .num {
-      width: 28px; height: 28px; border-radius: 8px;
-      background: rgba(108,99,255,0.2); border: 1px solid rgba(108,99,255,0.35);
-      display: inline-flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 700; color: #6C63FF; flex-shrink: 0;
-    }
-    p { font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
-    ul { list-style: none; margin-bottom: 12px; display: flex; flex-direction: column; gap: 8px; }
-    ul li {
-      font-size: 15px; color: rgba(255,255,255,0.7);
-      padding-left: 20px; position: relative;
-    }
-    ul li::before {
-      content: ''; position: absolute; left: 0; top: 9px;
-      width: 5px; height: 5px; border-radius: 50%; background: #6C63FF;
-    }
-    ul li strong { color: rgba(255,255,255,0.9); }
-    a { color: #818CF8; text-decoration: none; }
+    p { margin-bottom: 12px; color: #c4c0e0; font-size: 15px; }
+    ul { padding-left: 20px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; color: #c4c0e0; font-size: 15px; }
+    a { color: #A855F7; text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    .plan-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 12px; margin: 16px 0;
-    }
-    .plan-card {
-      border-radius: 14px; padding: 18px 20px;
-    }
-    .plan-card.free {
+    .card {
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(108,99,255,0.2);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin: 24px 0;
     }
-    .plan-card.premium {
-      background: rgba(108,99,255,0.1);
-      border: 1px solid rgba(108,99,255,0.3);
-    }
-    .plan-name {
-      font-size: 12px; font-weight: 700; letter-spacing: 1px;
-      text-transform: uppercase; margin-bottom: 10px;
-    }
-    .plan-card.free .plan-name { color: rgba(255,255,255,0.45); }
-    .plan-card.premium .plan-name { color: #6C63FF; }
-    .plan-card ul { gap: 6px; margin: 0; }
-    .plan-card ul li { font-size: 13px; }
-    .plan-card ul li::before { top: 7px; }
-
-    .warning-card {
-      background: rgba(245,158,11,0.08);
-      border: 1px solid rgba(245,158,11,0.2);
-      border-radius: 14px; padding: 16px 20px; margin-top: 14px;
-      font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6;
-    }
-    .warning-card strong { color: #F59E0B; }
-
-    .divider { height: 1px; background: rgba(255,255,255,0.07); margin: 48px 0; }
+    .card p { margin: 0; }
     footer {
-      text-align: center; font-size: 13px; color: rgba(255,255,255,0.25);
-      margin-top: 64px; padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.07);
-    }
-    footer a { color: rgba(255,255,255,0.35); }
-
-    @media (max-width: 520px) {
-      .plan-grid { grid-template-columns: 1fr; }
-      h1 { font-size: 28px; }
+      margin-top: 56px; padding-top: 24px;
+      border-top: 1px solid rgba(108,99,255,0.2);
+      font-size: 13px; color: #6b6893; text-align: center;
     }
   </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="logo-icon">C</div>
+        <span class="logo-name">Claro</span>
+      </div>
+      <h1>Terms of Service</h1>
+      <p class="meta">Effective date: May 17, 2025 &nbsp;·&nbsp; Last updated: May 17, 2025</p>
+    </header>
 
-  <div class="top-bar">
-    <div class="logo-mark">C</div>
-    <span class="brand">Claro</span>
-    <span class="badge">Legal</span>
-  </div>
+    <div class="card">
+      <p>By downloading or using Claro, you agree to these Terms of Service. Please read them carefully before using the app.</p>
+    </div>
 
-  <div class="container">
-    <div class="page-label">Legal</div>
-    <h1>Terms of Service</h1>
-    <p class="meta">Effective date: May 17, 2025 &nbsp;·&nbsp; Last updated: May 21, 2026</p>
-    <p class="lead">By downloading or using Claro, you agree to these Terms of Service. Please read them carefully before using the app.</p>
-
-    <h2><span class="num">1</span> Acceptance of Terms</h2>
+    <h2>1. Acceptance of Terms</h2>
     <p>These Terms of Service ("Terms") govern your access to and use of the Claro mobile application ("App") operated by Mert Türk ("we", "us", or "our"). By creating an account or using the App, you agree to be bound by these Terms. If you do not agree, do not use the App.</p>
 
-    <h2><span class="num">2</span> Description of Service</h2>
-    <p>Claro is a personal finance and habit tracking application. It allows users to:</p>
+    <h2>2. Description of Service</h2>
+    <p>Claro is a personal finance and habit tracking application that allows users to:</p>
     <ul>
       <li>Track income and expenses by category</li>
-      <li>Set monthly spending budgets per category</li>
-      <li>Create and monitor savings goals</li>
-      <li>Track personal habits, streaks, and completion rates</li>
-      <li>Use streak freezes to protect progress on missed days</li>
-      <li>Set daily reminders for individual habits</li>
+      <li>Set and monitor savings goals</li>
+      <li>Track personal habits and streaks</li>
       <li>Monitor net worth over time</li>
-      <li>View financial summaries, charts, and 28-day heatmaps</li>
+      <li>View financial summaries and reports</li>
     </ul>
-    <p>Some features are available only with a Claro Premium subscription (see Section 4).</p>
+    <p>Some features are available only with a Claro Premium subscription.</p>
 
-    <h2><span class="num">3</span> User Accounts</h2>
+    <h2>3. User Accounts</h2>
     <p>You must create an account to use Claro. You are responsible for:</p>
     <ul>
-      <li>Providing accurate information during registration.</li>
-      <li>Maintaining the confidentiality of your login credentials.</li>
+      <li>Providing accurate and current information during registration.</li>
+      <li>Maintaining the confidentiality of your account credentials.</li>
       <li>All activity that occurs under your account.</li>
     </ul>
     <p>You must be at least 13 years old to use Claro. By creating an account, you confirm you meet this requirement.</p>
 
-    <h2><span class="num">4</span> Free vs. Premium Plan</h2>
-    <div class="plan-grid">
-      <div class="plan-card free">
-        <div class="plan-name">Free</div>
-        <ul>
-          <li>Up to 3 habits</li>
-          <li>Up to 1 savings goal</li>
-          <li>Up to 2 budget categories</li>
-          <li>1 streak freeze per month</li>
-          <li>Basic finance tracking</li>
-        </ul>
-      </div>
-      <div class="plan-card premium">
-        <div class="plan-name">Premium</div>
-        <ul>
-          <li>Unlimited habits</li>
-          <li>Unlimited savings goals</li>
-          <li>Unlimited budget categories</li>
-          <li>4 streak freezes per month</li>
-          <li>Net worth tracking</li>
-          <li>Charts &amp; 28-day heatmap</li>
-          <li>Custom themes</li>
-          <li>PDF reports</li>
-          <li>Cloud sync across devices</li>
-          <li>No ads</li>
-        </ul>
-      </div>
-    </div>
-
-    <h2><span class="num">5</span> Subscriptions &amp; Payments</h2>
+    <h2>4. Subscriptions &amp; Payments</h2>
+    <p>Claro offers a free tier and a Premium subscription ("Claro Premium").</p>
     <ul>
-      <li><strong>Monthly plan:</strong> $9.99 per month.</li>
-      <li><strong>Annual plan:</strong> $59.99 per year (~$5.00/month). Best value.</li>
+      <li><strong>Free tier:</strong> Access to core features with certain limits (e.g., up to 3 habits, 1 savings goal).</li>
+      <li><strong>Claro Premium:</strong> Full access to all features, available as a monthly ($9.95/month) or annual ($69.95/year) subscription.</li>
       <li><strong>Free trial:</strong> New subscribers may receive a 7-day free trial. Trial eligibility is determined by Apple.</li>
-      <li><strong>Billing:</strong> Charged through your Apple ID upon purchase confirmation or at the end of a free trial period.</li>
-      <li><strong>Auto-renewal:</strong> Subscriptions renew automatically unless cancelled at least 24 hours before the current billing period ends.</li>
-      <li><strong>Cancellation:</strong> Cancel anytime through Apple ID account settings. No refunds for unused portions of a billing period.</li>
+      <li><strong>Billing:</strong> Subscriptions are billed through your Apple ID. Payment is charged upon purchase confirmation or at the end of a free trial period.</li>
+      <li><strong>Auto-renewal:</strong> Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current billing period.</li>
+      <li><strong>Cancellation:</strong> You may cancel at any time through your Apple ID account settings. No refunds are provided for the unused portion of a billing period.</li>
     </ul>
-    <p>All payments are processed by Apple. We do not store or access your payment information.</p>
+    <p>All payments are processed by Apple and are subject to Apple's terms. We do not store or have access to your payment information.</p>
 
-    <h2><span class="num">6</span> Acceptable Use</h2>
+    <h2>5. Acceptable Use</h2>
     <p>You agree not to:</p>
     <ul>
-      <li>Use the App for any unlawful purpose or in violation of applicable laws.</li>
+      <li>Use the App for any unlawful purpose or in violation of any applicable laws.</li>
       <li>Attempt to reverse engineer, decompile, or disassemble any part of the App.</li>
       <li>Use automated tools (bots, scrapers) to access the App.</li>
       <li>Attempt to gain unauthorized access to any part of the App or its infrastructure.</li>
-      <li>Upload or transmit harmful, offensive, or malicious content.</li>
+      <li>Upload or transmit any harmful, offensive, or malicious content.</li>
     </ul>
 
-    <h2><span class="num">7</span> User Data</h2>
-    <p>All financial and habit data you enter belongs to you. We do not share, sell, or use your personal data for advertising. For full details on data handling, please review our <a href="privacy-policy.html">Privacy Policy</a>.</p>
+    <h2>6. User Data</h2>
+    <p>All financial and habit data you enter into Claro belongs to you. We do not share, sell, or use your personal financial data for advertising purposes. For details on how we handle your data, please review our <a href="privacy-policy.html">Privacy Policy</a>.</p>
 
-    <h2><span class="num">8</span> Disclaimer of Warranties</h2>
-    <p>Claro is provided "as is" and "as available" without warranties of any kind, express or implied. We do not warrant that the App will be uninterrupted, error-free, or secure.</p>
-    <div class="warning-card">
-      <strong>Important:</strong> Claro is a personal tracking tool and is not a licensed financial advisor. Do not rely on the App as a substitute for professional financial advice.
-    </div>
+    <h2>7. Disclaimer of Warranties</h2>
+    <p>Claro is provided "as is" and "as available" without any warranties of any kind, either express or implied. We do not warrant that:</p>
+    <ul>
+      <li>The App will be uninterrupted, error-free, or secure.</li>
+      <li>Any information provided is accurate, complete, or suitable for financial decision-making.</li>
+    </ul>
+    <p><strong>Claro is a personal tracking tool and is not a licensed financial advisor. Do not rely on the App as a substitute for professional financial advice.</strong></p>
 
-    <h2><span class="num">9</span> Limitation of Liability</h2>
+    <h2>8. Limitation of Liability</h2>
     <p>To the maximum extent permitted by law, Mert Türk shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or relating to your use of the App, even if advised of the possibility of such damages.</p>
 
-    <h2><span class="num">10</span> Intellectual Property</h2>
-    <p>All content, design, code, and branding in the App (including the Claro name and logo) are the property of Mert Türk and protected by applicable intellectual property laws. You may not copy, reproduce, or distribute any part of the App without prior written consent.</p>
+    <h2>9. Intellectual Property</h2>
+    <p>All content, design, code, and branding in the App (including the Claro name and logo) are the property of Mert Türk and protected by applicable intellectual property laws. You may not copy, reproduce, or distribute any part of the App without our prior written consent.</p>
 
-    <h2><span class="num">11</span> Account Termination</h2>
+    <h2>10. Account Termination</h2>
     <p>You may delete your account at any time from within the App (Profile → Delete Account). We reserve the right to suspend or terminate accounts that violate these Terms. Upon deletion, all your data will be permanently removed within 30 days.</p>
 
-    <h2><span class="num">12</span> Changes to These Terms</h2>
+    <h2>11. Changes to These Terms</h2>
     <p>We may update these Terms from time to time. We will notify you of material changes by updating the "Last updated" date. Continued use of the App after changes take effect constitutes acceptance of the revised Terms.</p>
 
-    <h2><span class="num">13</span> Governing Law</h2>
+    <h2>12. Governing Law</h2>
     <p>These Terms are governed by the laws of the Republic of Turkey, without regard to conflict-of-law principles. Any disputes shall be resolved in the courts of Istanbul, Turkey.</p>
 
-    <div class="divider"></div>
-
-    <h2><span class="num">14</span> Contact</h2>
-    <p>For questions about these Terms:<br>
-    Email: <a href="mailto:mertturk0013@gmail.com">mertturk0013@gmail.com</a></p>
+    <h2>13. Contact</h2>
+    <p>For questions about these Terms, please contact us:</p>
+    <ul>
+      <li>Email: <a href="mailto:mertturk0013@gmail.com">mertturk0013@gmail.com</a></li>
+    </ul>
 
     <footer>
-      <p>© 2026 Claro &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a></p>
+      &copy; 2025 Claro · All rights reserved ·
+      <a href="privacy-policy.html">Privacy Policy</a>
     </footer>
   </div>
-
 </body>
 </html>
